@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 html,
 body,
 div,
@@ -83,8 +90,10 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  // font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -105,6 +114,7 @@ section {
 
 body {
   line-height: 1;
+  height: 100vh;
 }
 
 ol,
@@ -120,7 +130,7 @@ q {
 blockquote {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -128,7 +138,7 @@ blockquote {
 q {
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }

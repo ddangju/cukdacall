@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import Nav from '../../components/nav/Nav';
+import TabMenu from '../../components/outSchool/tabMenu/TabMenu';
+import './OutSchool.scss';
 
-class OutSchool extends Component {
+export default class outSchool extends Component {
   render() {
-    return <div>Out</div>;
+    return (
+      <>
+        <Nav />
+        <div className="outSchool">
+          <TabMenu />
+        </div>
+      </>
+    );
   }
 }
-
-export default OutSchool;
