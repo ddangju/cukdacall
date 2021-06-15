@@ -15,8 +15,7 @@ export default class Footer extends Component {
             Copyright © The Catholic University of Korea All rights reserved.
           </p>
         </div>
-        <div>
-          {/* <img src="/images/school.png" alt="img" className="teamImg" /> */}
+        <div className="toCuk">
           <a href="https://www.catholic.ac.kr/index.do">
             <img src="/images/school.png" alt="img" className="logoImg" />
           </a>

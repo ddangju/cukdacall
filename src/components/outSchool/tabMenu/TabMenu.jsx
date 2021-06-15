@@ -5,7 +5,7 @@ import Cafe from '../pages/Cafe';
 import Etc from '../pages/Etc';
 
 const components = { 1: <Restaurant />, 2: <Pub />, 3: <Cafe />, 4: <Etc /> };
-const categories = ['식당', '술집', '카페', '기타'];
+const categories = ['卖店', '酒吧', '咖啡厅', '教材/书籍'];
 
 export default class TabMenu extends Component {
   state = {
@@ -25,7 +25,9 @@ export default class TabMenu extends Component {
               <li
                 key={idx}
                 onClick={() => this.clickHandler(idx + 1)}
-                className="tabsMenu"
+                className={
+                  idx + 1 === this.state.currentId ? 'selected' : 'unselected'
+                }
               >
                 {category}
               </li>

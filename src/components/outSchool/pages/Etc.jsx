@@ -3,63 +3,59 @@ import PlacePhoto from '../tabMenu/PlacePhoto';
 
 export default class Etc extends Component {
   state = {
-    tabcontents: ['기타', '기타2', '기타3', '기타4', '기타5'],
-    etcData: [
-      { title: '하이', imgData: '', info: '설명1' },
-      { title: '하이', imgData: '', info: '설명2' },
-      { title: '하이', imgData: '', info: '설명3' },
-      { title: '하이', imgData: '', info: '설명4' },
+    data: [
+      {
+        title: '경인문고',
+        imgData: 'kyungin.png',
+        info: '每天 10:00-22:00 / 春节，中秋节休息',
+      },
+      {
+        title: '다큐 카피',
+        imgData: 'docucopy.png',
+        info: '平日 09:00-19:40 / 周末，公休日休息',
+      },
+      {
+        title: '교내 복사실',
+        imgData: 'gyonae.png',
+        info: '平日 08:00-20:00 / 周六 10:00-16:00 / 日, 公休日休息',
+      },
+      {
+        title: '용서점',
+        imgData: 'yongseo.png',
+        info: '12:00-20:00 / 周一, 周日休息',
+      },
+      {
+        title: '프린트 카페',
+        imgData: 'printcafe.png',
+        info: '每日  00:00-24:00',
+      },
+      {
+        title: '알파 문구',
+        imgData: 'alpha.png',
+        info: '平日 08:30-20:00 / 周六 09:00-19:00 / 周日休息',
+      },
+      {
+        title: '그린팜 마트',
+        imgData: 'greenfarm.png',
+        info: '每天 00:00-24:00',
+      },
+      {
+        title: '홈플러스 익스프레스',
+        imgData: 'homeplus.png',
+        info: '每天 10:00-23:00 / 第二, 第四个星期天休息',
+      },
     ],
-    etcCurrentId: 0,
-  };
-
-  handleChange = id => {
-    this.setState({ etcCurrentId: id });
   };
 
   render() {
     return (
-      <div>
-        <div>
-          <section className="outSchoolContainer">
-            <header className="description">
-              다큐카피(복사실), 다이소, 그린팜마트, 알파문구 등 기타 물품을 구할
-              수 있는 장소들이 있습니다
-            </header>
-            <section className="outSchoolContents">
-              <article className="contentsTabsBox">
-                {/* <ContentsTabs /> */}
-                <ul className="contentsTabs">
-                  {this.state.tabcontents.map((menu, idx) => {
-                    return (
-                      <li
-                        key={idx}
-                        className="contentsMenu"
-                        onClick={() => this.handleChange(idx)}
-                      >
-                        {menu}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </article>
-              <article className="contentsBox">
-                {this.state.etcData.map((data, idx) => {
-                  return (
-                    <PlacePhoto
-                      info={data}
-                      key={idx}
-                      idx={idx}
-                      state={this.state.etcCurrentId}
-                    />
-                  );
-                })}
-                {/* {etcData[this.state.etcCurrentId]} */}
-              </article>
-            </section>
-          </section>
-        </div>
-      </div>
+      <>
+        <section className="outSchoolContents">
+          {this.state.data.map((menu, idx) => {
+            return <PlacePhoto key={idx} info={menu} />;
+          })}
+        </section>
+      </>
     );
   }
 }

@@ -3,31 +3,49 @@ import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 export default class Nav extends Component {
+  state = {
+    data: [
+      { title: '学校内部', link: '/insideschool' },
+      { title: '学校外部', link: '/outsideschool' },
+      { title: '学校日程', link: '/academiccalender' },
+      { title: '讲义评价', link: '/classevaluation' },
+    ],
+  };
   clickHandler = () => {
     window.scrollTo({ left: 0, top: 0 });
+    this.setState({});
   };
   render() {
     return (
       <nav className="navContainer">
         <div className="navLogoBox">
-          <Link to="/">
-            <img alt="Logo" src="/images/그림1.png" className="navLogoImg" />
-          </Link>
+          <div className="test">
+            <Link to="/">
+              <img alt="Logo" src="/images/그림3.png" className="navLogoImg" />
+            </Link>
+          </div>
         </div>
         <div className="navTitle">
           <ul className="navList">
-            <Link to="/insideschool" onClick={this.clickHandler}>
-              <li className="inSchool">학교내부</li>
-            </Link>
-            <Link to="/outsideschool" onClick={this.clickHandler}>
-              <li className="outsideSchool">학교외부</li>
-            </Link>
-            <Link to="/academiccalender" onClick={this.clickHandler}>
-              <li className="academCal">학사일정</li>
-            </Link>
-            <Link to="/classevaluation" onClick={this.clickHandler}>
-              <li className="classEval">강의평가</li>
-            </Link>
+            {this.state.data.map((menu, idx) => {
+              return (
+                <Link
+                  to={menu.link}
+                  key={idx}
+                  onClick={() => this.clickHandler()}
+                >
+                  <li
+                    className={
+                      window.location.pathname === menu.link
+                        ? 'selected'
+                        : 'unselected'
+                    }
+                  >
+                    {menu.title}
+                  </li>
+                </Link>
+              );
+            })}
           </ul>
         </div>
       </nav>

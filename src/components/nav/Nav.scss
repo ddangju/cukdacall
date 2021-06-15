@@ -1,21 +1,31 @@
 .navContainer {
   top: 0;
-  background-color: rgb(255, 255, 255);
   border-bottom: 1px black;
 
   .navLogoBox {
-    background-color: #3736ff;
-    position: relative;
+    background-image: url('./img3.jpg');
+    background-size: cover;
+    background-position: left;
     text-align: center;
-    padding: 10px 0px 0px 0px;
+    .test {
+      background-color: rgba(5, 3, 116, 0.39);
 
-    .navLogoImg {
-      width: 500px;
-      font-size: 150px;
-    }
-    @media (max-width: 500px) {
       .navLogoImg {
-        width: 250px;
+        width: 500px;
+        padding: 50px 0px;
+
+        @media (max-width: 950px) {
+          width: 375px;
+          padding: 40px 0px;
+        }
+        @media (max-width: 650px) {
+          width: 250px;
+          padding: 30px 0px;
+        }
+        @media (max-width: 450px) {
+          width: 200px;
+          padding: 20px 0px;
+        }
       }
     }
   }
@@ -28,13 +38,58 @@
   border-bottom: 3px solid black;
   padding-top: 24px;
   padding-bottom: 24px;
+  align-items: baseline;
+  @media (max-width: 950px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media (max-width: 650px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  @media (max-width: 450px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 320px) {
+    margin-bottom: 8px;
+  }
 
   li {
     align-items: center;
     font-size: 22px;
     font-weight: bolder;
     color: rgb(0, 0, 0);
-    // text-shadow: 3px 3px 4px rgb(233, 232, 232);
+    @media (max-width: 950px) {
+      font-size: 19px;
+    }
+    @media (max-width: 650px) {
+      font-size: 15px;
+    }
+    @media (max-width: 450px) {
+      font-size: 13px;
+    }
+  }
+  .selected {
+    color: #3736ff;
+    font-size: 25px;
+    @media (max-width: 950px) {
+      font-size: 22px;
+    }
+    @media (max-width: 650px) {
+      font-size: 18px;
+    }
+    @media (max-width: 450px) {
+      font-size: 16px;
+    }
+  }
+  .unselected {
+    color: black;
+  }
+  .unselected:hover {
+    color: rgba(55, 54, 255, 0.7);
   }
   li:hover {
     text-decoration: none;
@@ -42,12 +97,7 @@
     font-weight: bolder;
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
   }
-  a {
+  a:hover {
     text-decoration: none;
-  }
-  @media (max-width: 500px) {
-    li {
-      font-size: 15px;
-    }
   }
 }

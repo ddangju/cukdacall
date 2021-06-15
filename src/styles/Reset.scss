@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-
+@font-face {
+  font-family: 'MaruBuri-Regular';
+  src: url('./Font/MaruBuri-Regular.otf');
+}
 * {
   box-sizing: border-box;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'MaruBuri-Regular';
 }
 
 html,
@@ -114,7 +116,6 @@ section {
 
 body {
   line-height: 1;
-  height: 100vh;
 }
 
 ol,
